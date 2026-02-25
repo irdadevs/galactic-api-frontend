@@ -24,50 +24,6 @@ export class Email {
   }
 }
 
-export class PasswordHash {
-  private constructor(private readonly value: string) {}
-
-  static create(value: string): PasswordHash {
-    const normalized = value.trim();
-    if (normalized.length < 10) {
-      throw ErrorFactory.domain("DOMAIN.INVALID_USER_PASSWORD", {
-        password: value,
-      });
-    }
-    return new PasswordHash(normalized);
-  }
-
-  toString(): string {
-    return this.value;
-  }
-
-  equals(other: PasswordHash): boolean {
-    return this.value === other.value;
-  }
-}
-
-export class Username {
-  private constructor(private readonly value: string) {}
-
-  static create(value: string): Username {
-    const normalized = value.trim();
-    if (!REGEXP.username.test(normalized)) {
-      throw ErrorFactory.domain("DOMAIN.INVALID_USER_USERNAME", {
-        username: value,
-      });
-    }
-    return new Username(normalized);
-  }
-
-  toString(): string {
-    return this.value;
-  }
-
-  equals(other: Username): boolean {
-    return this.value === other.value;
-  }
-}
-
 export class Role {
   private constructor(private readonly value: UserRole) {}
 

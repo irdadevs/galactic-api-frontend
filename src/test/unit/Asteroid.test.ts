@@ -1,5 +1,5 @@
-import { DomainError } from "@/src/lib/errors/Errors.base";
-import { Asteroid } from "@/src/domain/asteroid/Asteroid.aggregate";
+import { DomainError } from "../../lib/errors/Errors.base";
+import { Asteroid } from "../../domain/asteroid/Asteroid.aggregate";
 import {
   AsteroidName,
   AsteroidSizeValue,
