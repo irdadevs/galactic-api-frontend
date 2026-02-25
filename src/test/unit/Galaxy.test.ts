@@ -1,15 +1,11 @@
-import { DomainError } from "../../../lib/errors/Errors.base";
-import { Galaxy } from "../../../domain/galaxy/Galaxy.aggregate";
-import {
-  ALLOWED_GALAXY_SHAPES,
-  GalaxyName,
-  GalaxyShape,
-} from "../../../domain/galaxy/Galaxy.vo";
+import { DomainError } from "../../lib/errors/Errors.base";
+import { Galaxy } from "../../domain/galaxy/Galaxy.aggregate";
+import { ALLOWED_GALAXY_SHAPES, GalaxyName, GalaxyShape } from "../../domain/galaxy/Galaxy.vo";
 import {
   mapGalaxyApiToDomain,
   mapGalaxyDomainToDTO,
   mapGalaxyDomainToView,
-} from "../../../domain/galaxy/mappers";
+} from "../../domain/galaxy/mappers";
 
 describe("Galaxy aggregate", () => {
   const ownerId = "11111111-1111-4111-8111-111111111111";
